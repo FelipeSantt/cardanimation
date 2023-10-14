@@ -25,7 +25,19 @@
             <input type="text" id="cidade" placeholder="Digite sua cidade" required>
             <label for="cidade">Cidade</label>
         </div>
-        <button type="submit"><span>Pesquisar</span></button>
+        <button type="submit" id="btn"><span id="text">Pesquisar</span></button>
     </form>
+
+    <script>
+        btn.onclick = (e) => {
+            e.preventDefault();
+            btn.classList.add('active')
+            text.innerText = 'Aguarde...';
+            setTimeout(()=> {
+                btn.classList.remove('active');
+                text.innerText = 'Pesquisar';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
